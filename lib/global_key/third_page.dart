@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_keys/global_key/first_page.dart';
 import 'package:flutter_keys/widgets/color_state_widget.dart';
+
+
 
 
 class ThirdPage extends StatefulWidget {
@@ -14,6 +17,7 @@ class _ThirdPageState extends State<ThirdPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: AppBar(
           title: Text("Third example!"),
@@ -36,13 +40,15 @@ class _ThirdPageState extends State<ThirdPage> {
   }
 }
 
+
+
+
 class MyCustomContainer extends StatefulWidget {
   const MyCustomContainer({Key? key}) : super(key: key);
 
   @override
   State<MyCustomContainer> createState() => MyCustomContainerState();
 }
-
 class MyCustomContainerState extends State<MyCustomContainer> {
   Color color = Colors.black;
 
@@ -56,3 +62,4 @@ class MyCustomContainerState extends State<MyCustomContainer> {
     ));
   }
 }
+

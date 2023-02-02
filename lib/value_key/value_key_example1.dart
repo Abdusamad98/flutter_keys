@@ -23,14 +23,14 @@ class _ValueKeyExample1State extends State<ValueKeyExample1> {
             children: [
               if (showEmail)
                 TextField(
-                 // key: ValueKey(UserModel(age: 1)),
+                  key: ValueKey(UserModel(age: 1)),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Email",
                   ),
                 ),
               TextField(
-              //  key: ValueKey(UserModel(age: 2)),
+                key: ValueKey(UserModel(age: 2)),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "Username",
@@ -43,7 +43,7 @@ class _ValueKeyExample1State extends State<ValueKeyExample1> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            showEmail = false;
+            showEmail = !showEmail;
           });
         },
       ),
@@ -61,7 +61,11 @@ class UserModel {
     return identical(this, other) || other is UserModel && age == other.age;
   }
 
-
   @override
   int get hashCode => age.hashCode;
 }
+
+var instance1 = UserModel(age: 10);
+var instance2 = UserModel(age: 10);
+
+bool isEqual = instance1 == instance2;

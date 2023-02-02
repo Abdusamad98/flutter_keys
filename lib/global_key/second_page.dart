@@ -3,13 +3,17 @@ import 'package:flutter/material.dart';
 class SecondPage extends StatelessWidget {
   SecondPage({Key? key}) : super(key: key);
 
+
   final formKey = GlobalKey<FormState>();
+
   final nameController = TextEditingController();
   final emailController = TextEditingController();
 
 
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Global Key tutorial 2"),
@@ -25,8 +29,7 @@ class SecondPage extends StatelessWidget {
               decoration: const InputDecoration(
                 labelText: "Name",
               ),
-              validator: (value) =>
-                  value != null && value.isEmpty ? "Enter a valid name" : null,
+              validator: (value) => value != null && value.isEmpty ? "Enter a valid name" : null,
             ),
             const SizedBox(height: 12),
             TextFormField(
@@ -34,16 +37,12 @@ class SecondPage extends StatelessWidget {
               decoration: const InputDecoration(
                 labelText: "Email",
               ),
-              validator: (value) =>
-                  value != null && value.isEmpty && !value.contains('@')
-                      ? "Enter a valid email"
-                      : null,
+              validator: (value) => value != null && value.isEmpty && !value.contains('@') ? "Enter a valid email" : null,
             ),
             const SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
-                  var form = formKey.currentState!;
-                  if (form.validate()) {
+                  if (formKey.currentState!.validate()) {
                     debugPrint("Form is valid");
                   } else {
                     debugPrint("Form is not valid");

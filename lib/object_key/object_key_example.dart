@@ -15,16 +15,6 @@ class _ObjectKeyExampleState extends State<ObjectKeyExample> {
   void initState() {
     super.initState();
 
-    final peter1 = User(
-      name: 'Peter Drucker',
-      country: 'USA',
-    );
-
-    final peter2 = User(
-      name: 'Peter Drucker',
-      country: 'USA',
-    );
-
     users = [
       User(
         name: 'Sarah Abs',
@@ -44,6 +34,7 @@ class _ObjectKeyExampleState extends State<ObjectKeyExample> {
         country: 'India',
       ),
     ];
+
   }
 
   @override
@@ -57,7 +48,7 @@ class _ObjectKeyExampleState extends State<ObjectKeyExample> {
             children: List.generate(users.length, (index) {
               var user = users[index];
               return UserWidget(
-                //  key: ObjectKey(user),
+                  key: ObjectKey(user),
                 user: user,
               );
             }),
@@ -81,6 +72,7 @@ class User {
     required this.name,
     required this.country,
   });
+
 
   @override
   bool operator ==(Object other) =>

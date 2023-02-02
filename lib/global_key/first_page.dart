@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 //Agarda biz stateful widgetning statiga access(murojaat) qilishni
 //hohlasak global keylardan foydalanamiz
+
 class FirstPage extends StatelessWidget {
   FirstPage({Key? key}) : super(key: key);
 
@@ -20,9 +22,8 @@ class FirstPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          final counterState = keyCounter.currentState!;
-          counterState.increment();
-          print("COUNTER CURRENT VALUE:${counterState.counter}");
+          keyCounter.currentState!.increment();
+          print("COUNTER CURRENT VALUE:${keyCounter.currentState!.counter}");
         },
         child: const Icon(Icons.add),
       ),
@@ -45,6 +46,7 @@ class CounterWidgetState extends State<CounterWidget> {
       counter += 5;
     });
   }
+
 
   @override
   Widget build(BuildContext context) {

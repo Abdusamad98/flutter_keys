@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class ColorStateWidget extends StatefulWidget {
+class ColorStateWidget extends StatelessWidget {
   final String text;
 
 
@@ -11,49 +11,27 @@ class ColorStateWidget extends StatefulWidget {
     required this.text,
   }) : super(key: key);
 
-  @override
-  ColorStateWidgetState createState() => ColorStateWidgetState();
-}
-
-class ColorStateWidgetState extends State<ColorStateWidget> {
-  late Color color;
-
 
   @override
-  void initState() {
-    super.initState();
-
-    color = generateColor();
-  }
-
-  Color generateColor() {
-    final random = Random();
-
-    return Color.fromARGB(
-      255,
-      random.nextInt(255),
-      random.nextInt(255),
-      random.nextInt(255),
+  Widget build(BuildContext context) {
+    Color  color = generateColor();
+    return Container(
+      color: color,
+      width: 150,
+      height: 150,
+      child: Center(
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 
-  @override
-  Widget build(BuildContext context) =>
-      Container(
-    color: color,
-    width: 150,
-    height: 150,
-    child: Center(
-      child: Text(
-        widget.text,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 28,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    ),
-  );
 }
 
 Color generateColor() {

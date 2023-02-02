@@ -9,7 +9,7 @@ class ValueKeyExample2 extends StatefulWidget {
 
 class _ValueKeyExample2State extends State<ValueKeyExample2> {
   var users = [
-    User(name: "Jack", icon: Icons.access_time_outlined),
+    User(name: "Abdulloh", icon: Icons.access_time_outlined),
     User(name: "Jack", icon: Icons.access_alarm_rounded),
     User(name: "Tom", icon: Icons.ac_unit_outlined),
   ];
@@ -22,7 +22,7 @@ class _ValueKeyExample2State extends State<ValueKeyExample2> {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: ReorderableListView.builder(
               itemBuilder: (context, index) {
                 final user = users[index];
@@ -34,6 +34,8 @@ class _ValueKeyExample2State extends State<ValueKeyExample2> {
               },
               itemCount: users.length,
               onReorder: (oldIndex, newIndex) {
+                print("OLD INDEX:$oldIndex");
+                print("NEW INDEX:$newIndex");
                 setState(() {
                   final index = newIndex > oldIndex ? newIndex - 1 : newIndex;
                   final user = users.removeAt(oldIndex);
