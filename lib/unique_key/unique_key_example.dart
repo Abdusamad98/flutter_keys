@@ -21,9 +21,9 @@ class _UniqueKeyExampleState extends State<UniqueKeyExample> {
   @override
   void initState() {
     super.initState();
-    children = [
-      ColorStateWidget(key: UniqueKey(),text: '2'),
-      ColorStateWidget(key: UniqueKey(),text: '1'),
+    children =  [
+      ColorStateWidget(key:UniqueKey(),text: '2'),
+      ColorStateWidget(key:UniqueKey(),text: '1'),
     ];
   }
 

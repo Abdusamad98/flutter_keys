@@ -23,19 +23,20 @@ class _ValueKeyExample1State extends State<ValueKeyExample1> {
             children: [
               if (showEmail)
                 TextField(
-                  key: ValueKey(UserModel(age: 1)),
+                 key: ValueKey(1),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Email",
                   ),
                 ),
               TextField(
-                key: ValueKey(UserModel(age: 2)),
+               key: ValueKey(2),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "Username",
                 ),
-              )
+              ),
+
             ],
           ),
         ),
