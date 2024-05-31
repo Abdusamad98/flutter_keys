@@ -10,6 +10,9 @@ class ValueKeyExample1 extends StatefulWidget {
 class _ValueKeyExample1State extends State<ValueKeyExample1> {
   bool showEmail = true;
 
+  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,20 +26,21 @@ class _ValueKeyExample1State extends State<ValueKeyExample1> {
             children: [
               if (showEmail)
                 TextField(
-                 key: ValueKey(1),
+                  // controller: emailController,
+                  key: ValueKey(1),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Email",
                   ),
                 ),
               TextField(
-               key: ValueKey(2),
+                // controller: usernameController,
+                key: ValueKey(2),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "Username",
                 ),
               ),
-
             ],
           ),
         ),

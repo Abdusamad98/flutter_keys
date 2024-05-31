@@ -48,7 +48,7 @@ class _ObjectKeyExampleState extends State<ObjectKeyExample> {
             children: List.generate(users.length, (index) {
               var user = users[index];
               return UserWidget(
-                  key: ObjectKey(user),
+                 key: ObjectKey(user),
                 user: user,
               );
             }),
